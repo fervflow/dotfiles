@@ -23,3 +23,10 @@ Then use GNU stow to create symlinks:
 ```shell
 stow .
 ```
+
+Or, to overwrite into existing files:
+
+```bash
+stow -R .
+```
+
