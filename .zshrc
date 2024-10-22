@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
 ## EXPORTS
-#source $HOME/.profile # sourced automatically
+source $HOME/.profile
 
 # Delete word backwards when pressing leftctrl+back
 bindkey '^H' backward-kill-word
