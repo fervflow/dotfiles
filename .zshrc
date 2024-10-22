@@ -45,6 +45,6 @@ source /usr/share/nvm/init-nvm.sh
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/ferv/.dart-cli-completion/zsh-config.zsh ]] && . /home/ferv/.dart-cli-completion/zsh-config.zsh || true
+[[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
