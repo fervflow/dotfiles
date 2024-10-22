@@ -1,0 +1,233 @@
+# To enable this you must run:
+#  mkdir -p ~/.config/alacritty/themes
+#  git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+#
+import = [
+	"~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
+]
+live_config_reload = true
+working_directory = "None"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[window]
+dynamic_padding = true
+decorations = "full"
+title = "Alacritty@ferv"
+opacity = 0.60
+blur = true
+decorations_theme_variant = "Dark"
+
+[window.dimensions]
+columns = 120
+lines = 30
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+[scrolling]
+history = 20000
+multiplier = 6
+
+# BELL
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+# COLORS
+[colors]
+draw_bold_text_with_bright_colors = true
+
+# Default colors
+#[colors.primary]
+#background = '#343d46'
+#foreground = '#d8dee9'
+
+# Cursor colors
+[colors.cursor]
+cursor = '#f9ae58'
+text = '#000000'
+
+# Normal colors
+#[colors.normal]
+#black = '#000000'
+#blue = '#6699cc'
+#cyan = '#5fb4b4'
+#green = '#99c794'
+#magenta = '#c695c6'
+#red = '#ec5f66'
+#white = '#f7f7f7'
+#yellow = '#f9ae58'
+
+# Bright colors
+[colors.bright]
+black = '#777d95'
+#black = '#888888'
+#blue = '#85add6'
+#cyan = '#82c4c4'
+#green = '#acd1a8'
+#magenta = '#d8b6d8'
+#red = '#f97b58'
+#white = '#ffffff'
+#yellow = '#fac761'
+
+# Selection colors
+#[colors.selection]
+#background = '#4e5a65'
+#text = '#d8dee9'
+
+# FONT
+[font]
+size = 12
+builtin_box_drawing = true
+
+[font.normal]
+#family = "CaskaydiaCove NF"
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+#family = "CaskaydiaCove NF"
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+#family = "CaskaydiaCove NF"
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+#family = "CaskaydiaCove NF"
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 0
+
+# SELECTION
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+# CURSOR
+[cursor]
+vi_mode_style = "None"
+blink_interval = 650
+blink_timeout = 10
+unfocused_hollow = true
+thickness = 0.3
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+# MOUSE
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
+
+[keyboard]
+[[keyboard.bindings]]
+key = "Paste"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Copy"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+mode = "~Vi"
+chars = "\f"
+
+[[keyboard.bindings]]
+key = "ArrowUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollLineUp"
+
+[[keyboard.bindings]]
+key = "ArrowDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollLineDown"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToBottom"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+mode = "Vi"
+action = "ClearSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control"
+#action = "CreateNewWindow"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Backspace"
+mods = "Control"
+chars = "\u0008"
+

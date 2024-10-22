@@ -1,0 +1,76 @@
+-- Disable compatibility with old versions of vi
+vim.opt.compatible = false
+
+-- Show matching characters
+vim.opt.showmatch = true
+
+-- Perform case-insensitive searches
+vim.opt.ignorecase = true
+
+-- Enable mouse functionality (middle-click paste)
+vim.opt.mouse = "v"
+
+-- Highlight search matches
+vim.opt.hlsearch = true
+
+-- Enable incremental search as you type
+vim.opt.incsearch = true
+
+-- Set tab width to 4 spaces
+vim.opt.tabstop = 4
+
+-- Treat multiple spaces as tabstops for backspace behavior
+vim.opt.softtabstop = 4
+
+-- Convert tabs to spaces
+vim.opt.expandtab = true
+
+-- Set autoindent width to 4 spaces
+vim.opt.shiftwidth = 4
+
+-- Automatically indent new lines based on previous line
+vim.opt.autoindent = true
+
+-- Show line numbers
+vim.opt.number = true
+
+-- Enable bash-like tab completions
+vim.opt.wildmode = { "longest", "list" }
+
+-- Set recommended coding style line length (80 columns)
+vim.opt.columns = 100
+
+-- Enable filetype detection and indentation plugins
+-- vim.api.nvim_set_keymap('i', '<leader>filetype', vim.api.nvim_set_filetype_plugin, {})
+
+-- Enable syntax highlighting
+-- vim.opt.syntax = true
+
+-- Enable mouse click functionality
+vim.opt.mouse = "a"
+
+-- Use system clipboard
+vim.opt.clipboard = { "unnamedplus" }
+
+-- Enable pasting functionality
+vim.opt.paste = true
+
+-- Enable filetype plugins again (can be after filetype detection)
+-- vim.api.nvim_set_keymap('i', '<leader>filetype', vim.api.nvim_set_filetype_plugin, {})
+
+-- Highlight the current line
+vim.opt.cursorline = false
+
+-- Speed up scrolling
+vim.opt.ttyfast = true
+
+-- Enable True Color
+vim.opt.termguicolors = true
+
+-- Set colorscheme (assuming "slate" is a built-in or custom colorscheme)
+vim.cmd.colorscheme 'slate'
+
+-- Transparent background (optional)
+-- vim.api.nvim_set_hl_attr(0, "Normal", "ctermbg", "NONE")
+-- vim.api.nvim_set_hl_attr(0, "Normal", "guibg", "NONE")
+

@@ -1,0 +1,21 @@
+# ALIASES
+# Replace ls with eza
+alias ls='eza -a --color=always --group-directories-first --icons=always'
+alias ll='eza -alh --color=always --group-directories-first --icons=always' # long format
+alias lt='eza -aT --color=always --group-directories-first --icons=always'  # tree listing
+alias l.="eza -a | grep -e '^\.'"                                    # show only dotfiles
+
+# Some System shortcuts
+alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    # Hardware Info
+alias hw='hwinfo --short'
+    # Sort installed packages according to size in MB
+alias big="expac -H M '%m\t%n' | sort -h | nl"
+    # List amount of -git packages
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'
+alias mirror="sudo cachyos-rate-mirrors"
+
+# Program aliases
+alias vim="nvim"
+alias cat="bat"
+

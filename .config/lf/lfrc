@@ -1,0 +1,42 @@
+# vim: set ft=sh:
+
+set hidden true
+set drawbox true
+#set roundbox true # not recognized, idk why
+
+# COMMANDS
+cmd open ${{
+  case $(file --mime-type "$(readlink -f $f)" -b) in
+    text/*) $EDITOR "$f" ;;
+    *) xdg-open "$fx" ;;
+  esac
+}}
+    # credits: lukesmith
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && {
+		case $fx in
+			*.tar.bz2)   tar xjf $fx     ;;
+			*.tar.gz)    tar xzf $fx     ;;
+			*.bz2)       bunzip2 $fx     ;;
+			*.rar)       unrar e $fx     ;;
+			*.gz)        gunzip $fx      ;;
+			*.tar)       tar xf $fx      ;;
+			*.tbz2)      tar xjf $fx     ;;
+			*.tgz)       tar xzf $fx     ;;
+			*.zip)       unzip $fx       ;;
+			*.Z)         uncompress $fx  ;;
+			*.7z)        7z x $fx        ;;
+			*.tar.xz)    tar xf $fx      ;;
+		esac
+	}
+}}
+
+# KEY MAPS
+map h :set hidden!
+map E extract
+
