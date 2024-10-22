@@ -31,10 +31,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
 ## EXPORTS
-export EDITOR="/usr/bin/nvim"
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+#source $HOME/.profile # sourced automatically
 
 # Delete word backwards when pressing leftctrl+back
 bindkey '^H' backward-kill-word
