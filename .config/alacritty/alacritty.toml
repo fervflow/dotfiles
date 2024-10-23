@@ -1,3 +1,6 @@
+[general]
+live_config_reload = true
+working_directory = "None"
 # To enable this you must run:
 #  mkdir -p ~/.config/alacritty/themes
 #  git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
@@ -5,8 +8,6 @@
 import = [
 	"~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
 ]
-live_config_reload = true
-working_directory = "None"
 
 [env]
 TERM = "xterm-256color"
