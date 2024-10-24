@@ -1,5 +1,6 @@
 # ALIASES
 # Replace ls with eza
+alias l='eza -lh --color=always --group-directories-first --icons=always'
 alias ls='eza -a --color=always --group-directories-first --icons=always'
 alias ll='eza -alh --color=always --group-directories-first --icons=always' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons=always'  # tree listing
