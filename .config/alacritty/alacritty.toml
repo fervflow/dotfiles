@@ -17,8 +17,8 @@ WINIT_X11_SCALE_FACTOR = "1"
 dynamic_padding = true
 decorations = "full"
 title = "Alacritty@ferv"
-opacity = 0.60
-blur = true
+opacity = 0.82
+blur = false
 decorations_theme_variant = "Dark"
 
 [window.dimensions]

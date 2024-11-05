@@ -26,7 +26,17 @@ stow .
 
 Or, to overwrite into existing files:
 
-```bash
+```shell
 stow -R .
 ```
 
+Or, in one line:
+
+```shell
+stow --adopt . && git restore . && stow -R .
+```
+
+### Install these packages to avoid zsh warnings and get the correct font:
+```shell
+sudo pacman -Sy ttf-jetbrains-mono-nerd lf neovim zoxide nvm
+```
