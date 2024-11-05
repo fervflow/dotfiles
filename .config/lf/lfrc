@@ -1,6 +1,5 @@
 # vim: set ft=sh:
 
-set hidden true
 set drawbox true
 #set roundbox true # not recognized, idk why
 
