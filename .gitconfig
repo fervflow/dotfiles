@@ -2,4 +2,7 @@
 	name = Fernando
 	email = fervel1704@gmail.com
 [init]
-	defaultBranch = master
+    defaultBranch = master
+[includeIf "gitdir:~/Sources/AssureSoft-internship/"]
+    path = ~/Sources/AssureSoft-internship/.gitconfig
+
