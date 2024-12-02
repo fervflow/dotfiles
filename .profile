@@ -12,3 +12,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Added by Toolbox App
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
+
+# Modules
+export GTK_MODULES="appmenu-gtk-module"
+

@@ -16,7 +16,7 @@ plugins=(
     command-not-found
     cp
     zoxide
-    #nvm
+    nvm
     #zsh-autosuggestions
     #F-Sy-H
     #zsh-autocomplete
