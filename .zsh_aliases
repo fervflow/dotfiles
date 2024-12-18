@@ -1,4 +1,5 @@
 # ALIASES
+
 # Replace ls with eza
 alias l='eza -lh --color=always --group-directories-first --icons=always'
 alias ls='eza -a --color=always --group-directories-first --icons=always'
@@ -15,6 +16,21 @@ alias big="expac -H M '%m\t%n' | sort -h | nl"
     # List amount of -git packages
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'
 alias mirror="sudo cachyos-rate-mirrors"
+
+alias rmpkg="sudo pacman -Rsn"
+alias cleanch="sudo pacman -Scc"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias update="sudo pacman -Syu"
+
+# Cleanup orphaned packages
+alias cleanup="sudo pacman -Rsn (pacman -Qtdq)"
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
 
 # Program aliases
 alias vim="nvim"

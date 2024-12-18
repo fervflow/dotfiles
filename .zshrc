@@ -5,36 +5,27 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+#source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
-## Oh My Zsh Plugins
-plugins=(
-    #git
-    gitignore
-    colorize
-    colored-man-pages
-    command-not-found
-    cp
-    zoxide
-    nvm
-    #zsh-autosuggestions
-    #F-Sy-H
-    #zsh-autocomplete
-)
+# Source Oh-My-Zsh configurations
+[[ -f $HOME/.zsh_ohmyzsh ]] && source $HOME/.zsh_ohmyzsh
 
-# Override cd with zoxide
-export ZOXIDE_CMD_OVERRIDE="cd"
-
-source $ZSH/oh-my-zsh.sh
-
-## ALIASES
-source $HOME/.zsh_aliases
-
-## EXPORTS
-source $HOME/.profile
+# Source aliases
+[[ -f $HOME/.zsh_aliases ]] && source $HOME/.zsh_aliases
 
 # Delete word backwards when pressing leftctrl+back
 bindkey '^H' backward-kill-word
+
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# Fish-like syntax highlighting and autosuggestions
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Use history substring search
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# pkgfile "command not found" handler
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
