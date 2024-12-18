@@ -8,7 +8,7 @@ fi
 #source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 # Source Oh-My-Zsh configurations
-[[ -f $HOME/.zsh_ohmyzsh ]] && source $HOME/.zsh_ohmyzsh
+[[ -f $HOME/.zsh_omz ]] && source $HOME/.zsh_omz
 
 # Source aliases
 [[ -f $HOME/.zsh_aliases ]] && source $HOME/.zsh_aliases
@@ -16,8 +16,7 @@ fi
 # Delete word backwards when pressing leftctrl+back
 bindkey '^H' backward-kill-word
 
-
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# Load zsh plugins
 # Fish-like syntax highlighting and autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -26,6 +25,8 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # pkgfile "command not found" handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
+# Load p10k zsh theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

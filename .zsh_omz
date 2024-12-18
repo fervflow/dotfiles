@@ -18,9 +18,9 @@ plugins=(
     cp
     zoxide
     nvm
-    zsh-autosuggestions
+    #zsh-autosuggestions
     #F-Sy-H
-    zsh-autocomplete
+    #zsh-autocomplete
 )
 
 # zoxide overrize 'z' to 'cd'
