@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 # Source Oh-My-Zsh configurations
 [[ -f $HOME/.zsh_omz ]] && source $HOME/.zsh_omz
