@@ -15,10 +15,6 @@ fi
 #autoload -Uz compinit && compinit
 #zinit cdreplay -q
 
-# Shell integrations
-#eval "$(fzf --zsh)"
-#eval "$(zoxide init --cmd=cd zsh)"
-
 # Source ZSH OPTIONS configuration
 [[ -f $HOME/.zsh_options ]] && source $HOME/.zsh_options
 
@@ -28,6 +24,9 @@ fi
 # Source BINDKEYS
 [[ -f $HOME/.zsh_bindkeys ]] && source $HOME/.zsh_bindkeys
 
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd=cd zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
