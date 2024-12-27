@@ -1,0 +1,90 @@
+# Installation and configuration of a plugin manager
+
+# Zinit plugin manager
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Setting zsh directory
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Download and install if it does not exists
+if [ ! -d "$ZINIT_HOME" ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+# Source Zinit
+source "${ZINIT_HOME}/zinit.zsh"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Loading plugins
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Add Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Fish-like syntax highlighting and autosuggestions
+#zinit light z-shell/F-Sy-H         # this and the one below gives problems
+zinit ice completions; zinit light zdharma-continuum/fast-syntax-highlighting
+#zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+# Command completions on tab and load completions
+zinit light zsh-users/zsh-completions
+# Completions with fzf
+zinit light Aloxaf/fzf-tab
+
+# Add in snippets
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# from oh-my-zsh pluggins
+zinit snippet OMZP::git                 # git aliases
+zinit snippet OMZP::command-not-found   # pkgfile "command not found" handler
+zinit snippet OMZP::colorize            # colorize cat 'ccat'
+zinit snippet OMZP::colored-man-pages   # 
+zinit snippet OMZP::sudo                # prefix 'sudo' with esc esc
+#zinit snippet OMZP::nvm                 # node version manager sourcing
+#zinit snippet OMZP::zoxide              # node version manager sourcing
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# zoxide overrize 'z' to 'cd'
+#export ZOXIDE_CMD_OVERRIDE="cd"
+
+# Completions with fzf
+#zinit light Aloxaf/fzf-tab
+
+# Sourcings
+source /usr/share/nvm/init-nvm.sh
+
+# Load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
+
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd=cd zsh)"
+
+
+
+# Oh-My-Zsh plugin manager
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#export ZSH="/usr/share/oh-my-zsh"
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+#DISABLE_MAGIC_FUNCTIONS="true"
+# Uncomment the following line to enable command auto-correction.
+#ENABLE_CORRECTION="true"
+# Uncomment the following line to display red dots whilst waiting for completion.
+#COMPLETION_WAITING_DOTS="true"
+
+# Plugins
+#plugins=(
+#    git
+#    gitignore
+#    colorize
+#    colored-man-pages
+#    command-not-found
+#    cp
+#    zoxide
+#    nvm
+    #zsh-autosuggestions
+    #F-Sy-H
+    #zsh-autocomplete
+#)
+
+# zoxide overrize 'z' to 'cd'
+#export ZOXIDE_CMD_OVERRIDE="cd"
+
+# Source oh-my-szh
+#source $ZSH/oh-my-zsh.sh
+

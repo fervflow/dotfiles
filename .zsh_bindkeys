@@ -1,0 +1,13 @@
+# Bindkeys for ZSH
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Delete word backwards when pressing leftctrl+back
+bindkey '^H' backward-kill-word
+
+# Search history based on the prefix written
+bindkey '^[[A' history-search-backward 
+bindkey '^[[B' history-search-forward
+
+# ctrl+<- | ctrl+->
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+

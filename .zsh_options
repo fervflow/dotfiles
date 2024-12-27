@@ -1,0 +1,70 @@
+# Zsh shell options
+
+# Shell command history configuration
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# History size
+HISTSIZE=10000
+# Fle to store historical commands
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+# Erase duplicates from the historial
+#HISTDUP=erase
+# Ignore commands that start with spaces and duplicates.
+#HISTCONTROL=ignoreboth
+
+# Append to history instead of overwriting
+setopt appendhistory
+# Share history between zshell sesions
+setopt sharehistory
+# Ignore commands into the history when are prepended with a space
+setopt hist_ignore_space
+# Prevent any duplicate commands to being saved in the history
+setopt hist_save_no_dups    # Ignore repeated commands in the history file
+setopt hist_ignore_dups     # Ignore consecutive duplicates
+setopt hist_find_no_dups    # Don't match duplicates in search
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Don't add certain commands to the history file.
+export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
+#zshaddhistory() {
+#  case "$1" in
+#    (exit|clear|history|pwd|*:--help) return 1 ;;  # Skip these
+#  esac
+#  return 0
+#}
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Make new shells get the history lines from all previous
+# shells instead of the default "last window closed" history.
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+#precmd() { history -a }  # Append to history before every prompt
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Use custom `less` colors for `man` pages.
+LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
+LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -alh \
+--color=always \
+--group-directories-first \
+--icons=always \
+--no-permissions \
+--no-user \
+--no-time \
+--color-scale all $realpath'
+
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -alh \
+--color=always \
+--group-directories-first \
+--icons=always \
+--no-permissions \
+--no-user \
+--no-time \
+--color-scale all \
+$realpath'
+

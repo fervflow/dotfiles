@@ -5,36 +5,36 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#source /usr/share/cachyos-zsh-config/cachyos-config.zsh
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+# Source EXPORTS of paths and other env vars
+[[ -f ~/.zsh_exports ]] && source ~/.zsh_exports
 
-# Source Oh-My-Zsh configurations
-[[ -f $HOME/.zsh_omz ]] && source $HOME/.zsh_omz
+# Source zsh PLUGIN MANAGER and PLUGINS
+[[ -f $HOME/.zsh_plugins ]] && source $HOME/.zsh_plugins
 
-# Source aliases
+# Load completions
+#autoload -Uz compinit && compinit
+#zinit cdreplay -q
+
+# Shell integrations
+#eval "$(fzf --zsh)"
+#eval "$(zoxide init --cmd=cd zsh)"
+
+# Source ZSH OPTIONS configuration
+[[ -f $HOME/.zsh_options ]] && source $HOME/.zsh_options
+
+# Source ALIASES
 [[ -f $HOME/.zsh_aliases ]] && source $HOME/.zsh_aliases
 
-# Delete word backwards when pressing leftctrl+back
-bindkey '^H' backward-kill-word
+# Source BINDKEYS
+[[ -f $HOME/.zsh_bindkeys ]] && source $HOME/.zsh_bindkeys
 
-# Load zsh plugins
-# Fish-like syntax highlighting and autosuggestions
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# pkgfile "command not found" handler
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# Load p10k zsh theme
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/share/nvm/init-nvm.sh
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 
