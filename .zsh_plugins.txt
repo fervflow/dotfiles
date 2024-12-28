@@ -8,6 +8,12 @@ mattmc3/ez-compinit
 zsh-users/zsh-completions kind:fpath path:src
 aloxaf/fzf-tab
 
+# Keybindings
+#belak/zsh-utils path:editor
+
+# History
+#belak/zsh-utils path:history
+
 # Prompt
 romkatv/powerlevel10k
 
