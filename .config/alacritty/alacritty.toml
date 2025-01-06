@@ -22,8 +22,8 @@ blur = false
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
-columns = 120
-lines = 30
+columns = 130
+lines = 34
 
 [window.class]
 instance = "Alacritty"
