@@ -88,7 +88,7 @@ builtin_box_drawing = true
 [font.normal]
 #family = "CaskaydiaCove NF"
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Medium"
 
 [font.bold]
 #family = "CaskaydiaCove NF"

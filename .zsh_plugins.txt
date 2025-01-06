@@ -15,7 +15,7 @@ aloxaf/fzf-tab
 #belak/zsh-utils path:history
 
 # Prompt
-romkatv/powerlevel10k
+#romkatv/powerlevel10k
 
 # Utilities
 ohmyzsh/ohmyzsh path:plugins/git

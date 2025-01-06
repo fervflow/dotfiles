@@ -1,0 +1,116 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    foreground = 'blue'
+    background = 'transparent'
+    template = '<b>{{ path .Path .Location }}</b>'
+
+    [blocks.segments.properties]
+      style = 'unique'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'lightMagenta'
+    background = 'transparent'
+    template = """ \
+      {{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}\
+      {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}\
+      {{ if .Staging.Changed }} <green>{{ .Staging.String }}</>{{ end }}\
+      {{ if ne .Working.Deleted 0 }} <lightRed>-{{ .Working.Deleted }}</>{{ end }}\
+      {{ if ne .Working.Modified 0 }} <lightCyan>~{{ .Working.Modified }}</>{{ end }}\
+      {{ if ne .Working.Untracked 0 }} <yellow>?{{ .Working.Untracked }}</>{{ end }}\
+    """
+    
+    [blocks.segments.properties]
+      branch_max_length = 25
+      fetch_status = true
+      fetch_upstream_icon = true
+      branch_icon = '󰘬 '
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'green'
+    background = 'transparent'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}green{{end}}",
+    ]
+    template = '❱'
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }} '
+
+    [blocks.segments.properties]
+      threshold = 1000
+      style = 'austin'
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'plain'
+    foreground = 'green'
+    background = 'transparent'
+    template = '{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }} {{ .Full }} '
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_package_manager = true
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ if .Venv }}{{ .Venv }} {{ end }} {{ .Full }} '
+
+    [blocks.segments.properties]
+      display_mode = 'context'
+      fetch_version = true
+      fetch_virtual_env = true
+
+  [[blocks.segments]]
+    type = 'dart'
+    style = 'plain'
+    foreground = 'blue'
+    background = 'transparent'
+    template = '{{ if .Error }}{{ .Error }} {{ end }} {{ .Full }} '
+
+      [blocks.segments.properties]
+        display_mode = 'context'
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'plain'
+    foreground = 'darkGray'
+    background = 'transparent'
+    template = ' <p:blue><b>{{ .CurrentDate | date "15:04:05" }}</b></>'
+
