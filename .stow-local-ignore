@@ -1,8 +1,19 @@
+# Version control files
 \.git
 \.gitignore
 
+# Documentation files
 ^/README.*
 
-# configs directory
-\configs
+# Special directories that shouldn't be stowed
+# These directories contain files that need special handling
+# or are managed by separate installation scripts
+^/configs/.*
+^/scripts/.*
+
+# Add specific file patterns below if needed
+# Examples:
+# .*\.log$      # Ignore log files
+# .*\.swp$      # Ignore vim swap files
+# .*~$          # Ignore backup files
 
