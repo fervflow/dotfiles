@@ -28,3 +28,6 @@ export FZF_BASE=/usr/share/fzf
 export GTK_MODULES="appmenu-gtk-module"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# OTHER ENV VARS
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0

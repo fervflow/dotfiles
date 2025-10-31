@@ -22,8 +22,8 @@ blur = false
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
-columns = 130
-lines = 34
+columns = 148
+lines = 32
 
 [window.class]
 instance = "Alacritty"
@@ -82,7 +82,7 @@ black = '#777d95'
 
 # FONT
 [font]
-size = 12
+size = 11
 builtin_box_drawing = true
 
 [font.normal]
