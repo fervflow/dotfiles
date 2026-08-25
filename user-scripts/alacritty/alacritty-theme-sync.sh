@@ -8,7 +8,8 @@ ACTIVE_THEME="$ALACRITTY_DIR/active-theme.toml"
 ALACRITTY_CONFIG="$ALACRITTY_DIR/alacritty.toml"
 
 DARK_THEME="$THEMES_DIR/tokyo_night_storm.toml"
-LIGHT_THEME="$THEMES_DIR/ashes_light.toml"
+# LIGHT_THEME="$THEMES_DIR/ashes_light.toml"
+LIGHT_THEME="$THEMES_DIR/catppuccin_latte.toml"
 
 get_color_scheme() {
     local result
@@ -22,7 +23,7 @@ get_color_scheme() {
             org.freedesktop.appearance \
             color-scheme \
             2>/dev/null || true
-    )
+    )"
 
     # XDG Desktop Portal:
     # 0 = no preference

@@ -121,7 +121,8 @@ verify_themes() {
     local light_theme
 
     dark_theme="$THEMES_REPO/themes/tokyo_night_storm.toml"
-    light_theme="$THEMES_REPO/themes/ashes_light.toml"
+    # light_theme="$THEMES_REPO/themes/ashes_light.toml"
+    light_theme="$THEMES_REPO/themes/catppuccin_latte.toml"
 
     if [[ ! -f "$dark_theme" ]]; then
         error "Missing dark theme: $dark_theme"
@@ -142,12 +143,16 @@ verify_themes() {
 # ============================================================
 
 create_active_theme() {
-    info "Setting default Alacritty theme..."
+    info "Ensuring active Alacritty theme exists..."
 
     local dark_theme
     dark_theme="$THEMES_REPO/themes/tokyo_night_storm.toml"
 
-    rm -f "$ALACRITTY_DIR/active-theme.toml"
+    if [[ -L "$ALACRITTY_DIR/active-theme.toml" ||
+          -f "$ALACRITTY_DIR/active-theme.toml" ]]; then
+        success "Existing active theme preserved."
+        return
+    fi
 
     ln -s "$dark_theme" "$ALACRITTY_DIR/active-theme.toml"
 
@@ -225,7 +230,7 @@ enable_service() {
 run_initial_sync() {
     info "Synchronizing with the current Plasma theme..."
 
-    "$USER_BIN/alacritty-theme-sync"
+    "$USER_BIN/alacritty-theme-sync.sh"
 
     success "Initial theme synchronization complete."
 }

@@ -2,7 +2,7 @@
 
 set -u
 
-SYNC="$HOME/.local/bin/alacritty-theme-sync"
+SYNC="$HOME/.local/bin/alacritty-theme-sync.sh"
 
 # Synchronize once when the service starts.
 "$SYNC"
