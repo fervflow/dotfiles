@@ -1,0 +1,139 @@
+# ============================================================
+# CLIPBOARD
+# ============================================================
+# Dedicated Paste key.
+[[keyboard.bindings]]
+key = "Paste"
+action = "Paste"
+
+# Dedicated Copy key.
+[[keyboard.bindings]]
+key = "Copy"
+action = "Copy"
+
+# ============================================================
+# TERMINAL CONTROL
+# ============================================================
+# Ctrl+L: clear Alacritty notification/log messages.
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
+
+# Ctrl+L: also send form-feed to the shell outside Vi mode.
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+mode = "~Vi"
+chars = "\f"
+
+# ============================================================
+# SCROLLING
+# ============================================================
+# Shift+Up: scroll one line up.
+[[keyboard.bindings]]
+key = "ArrowUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollLineUp"
+
+# Shift+Down: scroll one line down.
+[[keyboard.bindings]]
+key = "ArrowDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollLineDown"
+
+# Shift+PageUp: scroll one page up.
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
+
+# Shift+PageDown: scroll one page down.
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
+
+# Shift+Home: jump to the top of scrollback.
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToTop"
+
+# Shift+End: jump to the bottom of scrollback.
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToBottom"
+
+# ============================================================
+# SEARCH
+# ============================================================
+# Ctrl+Shift+F: search forward.
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+# Ctrl+Shift+B: search backward.
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+# ============================================================
+# ALTERNATIVE CLIPBOARD SHORTCUTS
+# ============================================================
+# Ctrl+Shift+V: paste.
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+# Ctrl+Shift+C: copy.
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+# Ctrl+Shift+C in Vi mode: clear selection.
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+mode = "Vi"
+action = "ClearSelection"
+
+# ============================================================
+# FONT
+# ============================================================
+# Ctrl+0: reset font size.
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+# ============================================================
+# NEW TERMINAL PROCESS
+# ============================================================
+# Ctrl+N: start another Alacritty process.
+[[keyboard.bindings]]
+key = "N"
+mods = "Control"
+action = "SpawnNewInstance"
+#action = "CreateNewWindow"
+
+# ============================================================
+# BACKSPACE
+# ============================================================
+# Ctrl+Backspace: send a literal backspace character.
+[[keyboard.bindings]]
+key = "Backspace"
+mods = "Control"
+chars = "\u0008"
+

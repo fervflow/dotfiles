@@ -17,3 +17,6 @@
 # .*\.swp$      # Ignore vim swap files
 # .*~$          # Ignore backup files
 
+# Specific files managed by separate installation scripts
+^/\.config/alacritty/active-theme\.toml$
+

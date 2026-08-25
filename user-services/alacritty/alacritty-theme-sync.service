@@ -1,0 +1,13 @@
+[Unit]
+Description=Synchronize Alacritty theme with Plasma color scheme
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/alacritty-theme-watcher
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

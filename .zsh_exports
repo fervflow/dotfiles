@@ -13,6 +13,7 @@ export EDITOR="/usr/bin/nvim"
 # PATHs
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Android development paths, from Android Studio's docs
+export PATH="$PATH":"$HOME/.local/bin"
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -31,3 +32,7 @@ export GTK_MODULES="appmenu-gtk-module"
 # OTHER ENV VARS
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

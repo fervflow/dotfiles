@@ -2,7 +2,11 @@
 	name = Fernando
 	email = fervel1704@gmail.com
 [init]
-    defaultBranch = master
+	defaultBranch = main
 [includeIf "gitdir:~/Sources/AssureSoft-internship/"]
     path = ~/Sources/AssureSoft-internship/.gitconfig
 
+[http]
+	lowSpeedLimit = 1000
+	lowSpeedTime = 60
+	postBuffer = 524288000
